@@ -4,6 +4,7 @@
     package="br.com.lucasfcarneiro.projetoempresas">
 
     <application
+        android:name=".base.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
