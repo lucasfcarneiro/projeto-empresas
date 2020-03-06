@@ -39,9 +39,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application), 
         if (email.isEmpty()) {
             emailState.postError("Campo email vazio")
             isValid = false
-        }
-
-        if (!email.contains("@") || !email.contains(".")) {
+        } else if (!email.contains("@") || !email.contains(".")) {
             emailState.postError("Email invalido")
             isValid = false
         }
