@@ -36,6 +36,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //Koin
+    implementation "org.koin:koin-android:2.0.0-rc-2"
+    implementation "org.koin:koin-androidx-scope:2.0.0-rc-2"
+    implementation "org.koin:koin-androidx-viewmodel:2.0.0-rc-2"
+
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.2.1"
     implementation "androidx.navigation:navigation-ui-ktx:2.2.1"

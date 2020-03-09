@@ -2,5 +2,8 @@
     <string name="app_name">Projeto Empresas</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bem_vindo_empresas">BEM VINDO AO EMPRESAS</string>
+    <string name="login_description">Lorem ipsum dolor sit amet, contetur adipiscing elit. Nunc accumsan.</string>
+    <string name="buttonLogin">Entrar</string>
+    <string name="errorMessage">Credenciais informadas são inválidas, tente novamente.</string>
 </resources>
