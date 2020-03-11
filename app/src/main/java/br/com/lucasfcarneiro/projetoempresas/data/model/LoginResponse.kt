@@ -13,5 +13,5 @@ data class LoginResponse(
     val success: Boolean?,
 
     @SerializedName ( "Errors")
-    val errors : String?
+    val errors : ErrorModel?
 )

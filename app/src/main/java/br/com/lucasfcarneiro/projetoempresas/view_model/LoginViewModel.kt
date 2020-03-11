@@ -3,16 +3,11 @@ package br.com.lucasfcarneiro.projetoempresas.view_model
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import br.com.lucasfcarneiro.projetoempresas.utils.extensions.asLiveData
-import br.com.lucasfcarneiro.projetoempresas.utils.extensions.postError
-import br.com.lucasfcarneiro.projetoempresas.utils.extensions.postSuccess
-import br.com.lucasfcarneiro.projetoempresas.utils.extensions.viewState
-import br.com.lucasfcarneiro.projetoempresas.utils.view_state.ViewState
+import br.com.lucasfcarneiro.projetoempresas.data.repository.LoginRepository
+import br.com.lucasfcarneiro.projetoempresas.utils.extensions.*
 import org.koin.core.KoinComponent
 
-class LoginViewModel(application: Application) : AndroidViewModel(application), LifecycleObserver,
+class LoginViewModel(application: Application, private val loginRepository: LoginRepository) : AndroidViewModel(application), LifecycleObserver,
     KoinComponent {
 
     private val emailState by viewState<Unit>()
@@ -24,16 +19,17 @@ class LoginViewModel(application: Application) : AndroidViewModel(application), 
     fun getLoginState() = loginState.asLiveData()
 
 
-    fun login(email: String, passaword: String) {
-        if (validateFields(email, passaword)) {
-            loginState.postSuccess(Unit)
+    fun login(email: String, password: String) {
+        if (validateFields(email, password)) {
+//            loginState.postSuccess(Unit)
+            loginState.postLoading()
         } else {
             loginState.postError("erru")
         }
 
     }
 
-    private fun validateFields(email: String, passaword: String): Boolean {
+    private fun validateFields(email: String, password: String): Boolean {
         var isValid = true
 
         if (email.isEmpty()) {
@@ -44,7 +40,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application), 
             isValid = false
         }
 
-        if (passaword.isEmpty()) {
+        if (password.isEmpty()) {
             passwordState.postError("Senha vazia")
 
             isValid = false
