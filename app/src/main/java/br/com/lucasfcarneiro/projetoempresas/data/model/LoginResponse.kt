@@ -2,16 +2,16 @@ package br.com.lucasfcarneiro.projetoempresas.data.model
 
 import com.google.gson.annotations.SerializedName
 
-class LoginResponse(
+data class LoginResponse(
     @SerializedName("investor")
-    val investor: String = "",
+    val investor: InvestorModel?,
 
     @SerializedName("enterprise")
-    val enterprise: String = "",
+    val enterprise: String?,
 
     @SerializedName("success")
-    val success: Boolean = false,
+    val success: Boolean?,
 
     @SerializedName ( "Errors")
-    val errors : String = ""
+    val errors : String?
 )

@@ -10,6 +10,7 @@ import br.com.lucasfcarneiro.projetoempresas.R
 import br.com.lucasfcarneiro.projetoempresas.base.BaseFragment
 import br.com.lucasfcarneiro.projetoempresas.view_model.LoginViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
+import java.lang.Error
 
 class LoginFragment : BaseFragment() {
 
@@ -42,7 +43,7 @@ class LoginFragment : BaseFragment() {
     private fun observeState() {
         viewModel.getLoginState().onPostValue(this,
             onSuccess = {
-                //TODO: Navigate to Home
+                errorMessage.text = "deu certo uhuu"
 
             },
             onError = {
