@@ -1,15 +1,13 @@
 package br.com.lucasfcarneiro.projetoempresas.data.repository
 
-import br.com.lucasfcarneiro.projetoempresas.base.BaseRepository
-import br.com.lucasfcarneiro.projetoempresas.data.Response
 import br.com.lucasfcarneiro.projetoempresas.data.model.LoginModel
 import br.com.lucasfcarneiro.projetoempresas.data.model.LoginResponse
-import br.com.lucasfcarneiro.projetoempresas.utils.extensions.safeApiCall
+import br.com.lucasfcarneiro.projetoempresas.data.service.EnterpriseService
+import br.com.lucasfcarneiro.projetoempresas.di.enterpriseServiceModule
 
-class LoginRepository : BaseRepository() {
+class LoginRepository (private val enterpriseService: EnterpriseService) {
 
-    suspend fun login(email: String, password: String): Response<LoginResponse> {
-        return safeApiCall({ networkStatus.isOnline() },
-            { service.login(LoginModel(email, password)) })
+    suspend fun login(email: String, password: String): LoginResponse {
+            return enterpriseService .login(LoginModel(email, password))
     }
 }

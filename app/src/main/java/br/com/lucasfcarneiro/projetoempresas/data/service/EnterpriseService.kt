@@ -2,7 +2,6 @@ package br.com.lucasfcarneiro.projetoempresas.data.service
 
 import br.com.lucasfcarneiro.projetoempresas.data.model.LoginModel
 import br.com.lucasfcarneiro.projetoempresas.data.model.LoginResponse
-import kotlinx.coroutines.Deferred
 import retrofit2.http.Body
 import retrofit2.http.POST
 

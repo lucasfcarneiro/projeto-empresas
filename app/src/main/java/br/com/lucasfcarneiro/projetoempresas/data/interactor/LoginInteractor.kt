@@ -1,6 +1,5 @@
 package br.com.lucasfcarneiro.projetoempresas.data.interactor
 
-import br.com.lucasfcarneiro.projetoempresas.data.Response
 import br.com.lucasfcarneiro.projetoempresas.data.model.LoginResponse
 import br.com.lucasfcarneiro.projetoempresas.data.repository.LoginRepository
 import br.com.lucasfcarneiro.projetoempresas.utils.ThreadContextProvider
@@ -14,7 +13,7 @@ class LoginInteractor(
     private val scope: CoroutineScope
 ) {
 
-    fun login(email: String, password: String, result : (Response<LoginResponse>)->Unit) {
+    fun login(email: String, password: String, result : (LoginResponse)->Unit) {
 
         scope.launch(contextProvider.io) {
             val response = loginRepository.login(email, password)
@@ -22,6 +21,5 @@ class LoginInteractor(
                 result(response)
             }
         }
-
     }
 }

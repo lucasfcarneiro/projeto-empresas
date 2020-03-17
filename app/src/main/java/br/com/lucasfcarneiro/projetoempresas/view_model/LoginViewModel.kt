@@ -3,6 +3,7 @@ package br.com.lucasfcarneiro.projetoempresas.view_model
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LifecycleObserver
+import br.com.lucasfcarneiro.projetoempresas.data.interactor.LoginInteractor
 import br.com.lucasfcarneiro.projetoempresas.data.repository.LoginRepository
 import br.com.lucasfcarneiro.projetoempresas.utils.extensions.*
 import org.koin.core.KoinComponent
@@ -10,6 +11,8 @@ import org.koin.core.KoinComponent
 class LoginViewModel(application: Application, private val loginRepository: LoginRepository) : AndroidViewModel(application), LifecycleObserver,
     KoinComponent {
 
+
+    private val loginInteractor : LoginInteractor by getInteractor()
     private val emailState by viewState<Unit>()
     private val passwordState by viewState<Unit>()
     private val loginState by viewState<Unit>()
@@ -21,12 +24,15 @@ class LoginViewModel(application: Application, private val loginRepository: Logi
 
     fun login(email: String, password: String) {
         if (validateFields(email, password)) {
-//            loginState.postSuccess(Unit)
             loginState.postLoading()
-        } else {
-            loginState.postError("erru")
+            loginInteractor.login(email, password) {
+                if (it.success) {
+                    loginState.postSuccess(Unit)
+                } else {
+                    loginState.postError("erru")
+                }
+            }
         }
-
     }
 
     private fun validateFields(email: String, password: String): Boolean {

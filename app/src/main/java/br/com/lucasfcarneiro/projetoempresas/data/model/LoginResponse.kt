@@ -10,8 +10,6 @@ data class LoginResponse(
     val enterprise: String?,
 
     @SerializedName("success")
-    val success: Boolean?,
+    val success: Boolean = false
 
-    @SerializedName ( "Errors")
-    val errors : ErrorModel?
 )

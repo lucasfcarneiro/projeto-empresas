@@ -10,28 +10,12 @@ import java.lang.reflect.Type
 
 
 object EnterpriseServiceFactory {
-    fun createClient(url: String, okHttpClient: OkHttpClient, adapter: CoroutineCallAdapterFactory) : EnterpriseService{
+    fun createClient(url: String) : EnterpriseService{
         val retrofit = Retrofit.Builder()
             .baseUrl(url)
-            .client(okHttpClient)
-            .addConverterFactory(UnitConverterFactory)
-            .addCallAdapterFactory(adapter)
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
         return retrofit.create(EnterpriseService::class.java)
-    }
-
-    object UnitConverterFactory : Converter.Factory() {
-        override fun responseBodyConverter(type: Type, annotations: Array<out Annotation>,
-                                           retrofit: Retrofit): Converter<ResponseBody, *>? {
-            return if (type == Unit::class.java) UnitConverter else null
-        }
-
-        private object UnitConverter : Converter<ResponseBody, Unit> {
-            override fun convert(value: ResponseBody) {
-                value.close()
-            }
-        }
     }
 }
