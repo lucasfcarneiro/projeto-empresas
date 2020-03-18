@@ -7,5 +7,6 @@
     <string name="buttonLogin">Entrar</string>
     <string name="errorMessage">Credenciais informadas são inválidas, tente novamente.</string>
     <string name="searchHint">Pesquisar</string>
+    <string name="searchStartHint">Clique na busca para iniciar</string>
 
 </resources>
