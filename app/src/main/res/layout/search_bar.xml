@@ -15,8 +15,8 @@
             android:layout_height="match_parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
                 android:id="@+id/homeLogo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/logo_toolbar"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -25,18 +25,18 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.SearchView
+                android:id="@+id/homeSearchView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/homeSearchView"
                 app:closeIcon="@drawable/ic_close"
+                app:defaultQueryHint="@string/searchHint"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toEndOf="@id/homeLogo"
+                app:layout_constraintTop_toTopOf="parent"
                 app:searchHintIcon="@drawable/ic_search"
-                app:searchIcon="@drawable/ic_search"
-                app:defaultQueryHint="@string/searchHint"/>
+                app:searchIcon="@drawable/ic_search" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
