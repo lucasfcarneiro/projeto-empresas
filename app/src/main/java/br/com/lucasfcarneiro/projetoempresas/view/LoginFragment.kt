@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import br.com.lucasfcarneiro.projetoempresas.R
 import br.com.lucasfcarneiro.projetoempresas.base.BaseFragment
@@ -42,8 +43,7 @@ class LoginFragment : BaseFragment() {
     private fun observeState() {
         viewModel.getLoginState().onPostValue(this,
             onSuccess = {
-                //TODO: Navigate to Home
-
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
             },
             onError = {
                 errorMessage.visibility = View.VISIBLE
