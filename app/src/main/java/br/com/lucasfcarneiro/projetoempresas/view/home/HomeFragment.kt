@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import br.com.lucasfcarneiro.projetoempresas.R
 import br.com.lucasfcarneiro.projetoempresas.base.BaseFragment
 import br.com.lucasfcarneiro.projetoempresas.view.home.adapter.EnterpriseAdapter
@@ -52,7 +53,7 @@ class HomeFragment : BaseFragment(), OnItemClickListener<String> {
     }
 
     override fun onItemClick(item: String, position: Int) {
-
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToEnterpriseDetailFragment())
     }
 
 

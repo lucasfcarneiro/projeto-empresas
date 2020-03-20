@@ -28,5 +28,14 @@
         android:id="@+id/homeFragment"
         android:name="br.com.lucasfcarneiro.projetoempresas.view.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_enterpriseDetailFragment"
+            app:destination="@id/enterpriseDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterpriseDetailFragment"
+        android:name="br.com.lucasfcarneiro.projetoempresas.view.enterprise_detail.EnterpriseDetailFragment"
+        android:label="fragment_enterprise_detail"
+        tools:layout="@layout/fragment_enterprise_detail" />
 </navigation>
