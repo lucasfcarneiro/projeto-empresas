@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="br.com.lucasfcarneiro.projetoempresas.view.LoginFragment"
+        android:name="br.com.lucasfcarneiro.projetoempresas.view.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="br.com.lucasfcarneiro.projetoempresas.view.HomeFragment"
+        android:name="br.com.lucasfcarneiro.projetoempresas.view.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

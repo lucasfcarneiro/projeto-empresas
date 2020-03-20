@@ -1,4 +1,4 @@
-package br.com.lucasfcarneiro.projetoempresas.view
+package br.com.lucasfcarneiro.projetoempresas.view.login
 
 
 import android.os.Bundle
