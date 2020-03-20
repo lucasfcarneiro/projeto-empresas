@@ -1,4 +1,4 @@
-package br.com.lucasfcarneiro.projetoempresas.view
+package br.com.lucasfcarneiro.projetoempresas.view.login
 
 
 import android.os.Bundle
@@ -25,7 +25,6 @@ class LoginFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
     }
 
