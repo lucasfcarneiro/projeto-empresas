@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 
 import br.com.lucasfcarneiro.projetoempresas.R
 import kotlinx.android.synthetic.main.enterprise_detail_bar.*
+import kotlinx.android.synthetic.main.search_bar.*
 
 class EnterpriseDetailFragment : Fragment() {
 
@@ -18,5 +19,13 @@ class EnterpriseDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_enterprise_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        icArrowBack.setOnClickListener{
+            findNavController().popBackStack()
+
+        }
     }
 }

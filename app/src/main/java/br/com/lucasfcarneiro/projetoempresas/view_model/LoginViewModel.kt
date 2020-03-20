@@ -28,7 +28,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application), 
         if (validateFields(email, passaword)) {
             loginState.postSuccess(Unit)
         } else {
-            loginState.postError("erru")
+            loginState.postError("Credencias incorretas")
         }
 
     }
